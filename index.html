@@ -168,6 +168,20 @@ body{
 }
 .social a:hover{color:var(--accent)}
 
+/* ── ENTER SHOP BUTTON ── */
+.enter-shop-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;
+  padding:14px 36px;text-decoration:none;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  font-family:var(--sans);font-weight:500;
+  box-shadow:0 4px 20px rgba(255,141,161,.4);
+  transition:background .25s,gap .2s;
+  margin-bottom:28px;
+  animation:fadeUp .8s .5s ease both;
+}
+.enter-shop-btn:hover{background:var(--accent-dark);gap:16px}
+
 /* ── TOAST ── */
 .toast{
   position:fixed;bottom:30px;left:50%;
@@ -253,6 +267,9 @@ body{
     </div>
   </div>
   <p class="email-note">Be the first to shop. No spam, ever.</p>
+
+  <!-- Owner access button -->
+  <a href="shop.html" class="enter-shop-btn">Enter the Shop →</a>
 
 
 </div>
