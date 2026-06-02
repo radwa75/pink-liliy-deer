@@ -294,24 +294,67 @@ nav{
 .products-section{padding:0 40px 80px}
 .filter-bar{
   display:flex;align-items:center;justify-content:space-between;
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:16px 0;margin-bottom:40px;
+  gap:16px;
+  padding:20px 0 18px;
+  margin-bottom:36px;
+  border-bottom:1px solid var(--border);
 }
-.filter-tabs{display:flex;gap:0;list-style:none}
+.filter-tabs{display:flex;gap:8px;list-style:none;flex-wrap:wrap}
 .filter-tabs li{
-  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--muted);padding:6px 20px;cursor:pointer;
-  transition:color .2s;border-right:1px solid var(--border);
+  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--muted);
+  padding:8px 20px;
+  cursor:pointer;
   font-family:var(--sans);font-weight:400;
+  border-radius:50px;
+  border:1px solid var(--border);
+  background:transparent;
+  transition:color .2s,background .2s,border-color .2s,box-shadow .2s;
+  white-space:nowrap;
+  user-select:none;
 }
-.filter-tabs li:first-child{padding-left:0}
-.filter-tabs li:last-child{border:none}
-.filter-tabs li.active,.filter-tabs li:hover{color:var(--accent)}
-.filter-tabs li.active{font-weight:500;border-bottom:1.5px solid var(--accent)}
+.filter-tabs li:hover{
+  color:var(--accent);
+  border-color:var(--blush);
+  background:var(--accent-light);
+}
+.filter-tabs li.active{
+  color:#fff;
+  background:var(--accent);
+  border-color:var(--accent);
+  font-weight:500;
+  box-shadow:0 3px 12px rgba(220,118,140,0.35);
+}
+.sort-wrapper{
+  position:relative;display:flex;align-items:center;flex-shrink:0;
+}
+.sort-wrapper::after{
+  content:'';
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:0;height:0;
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid var(--muted);
+  pointer-events:none;transition:border-top-color .2s;
+}
+.sort-wrapper:hover::after{border-top-color:var(--accent)}
 .sort-select{
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);background:none;border:none;cursor:pointer;
-  font-family:var(--sans);outline:none;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);
+  font-family:var(--sans);font-weight:400;
+  border:1px solid var(--border);
+  border-radius:50px;
+  padding:8px 36px 8px 18px;
+  background:transparent;
+  cursor:pointer;
+  outline:none;
+  appearance:none;
+  -webkit-appearance:none;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.sort-select:hover,.sort-select:focus{
+  color:var(--accent);
+  border-color:var(--blush);
+  background:var(--accent-light);
 }
 .product-grid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
@@ -726,7 +769,12 @@ footer{
 .all-products-body .filter-bar{
   position:sticky;top:0;z-index:5;
   background:var(--cream);
-  margin-bottom:40px;
+  margin-bottom:36px;
+  padding-top:20px;
+  transition:box-shadow .2s;
+}
+.all-products-body .filter-bar.scrolled{
+  box-shadow:0 4px 20px rgba(220,118,140,0.08);
 }
 .all-products-count{
   font-size:10px;letter-spacing:2px;text-transform:uppercase;
@@ -1062,12 +1110,14 @@ footer{
         <li onclick="setAllFilter(this,'skirts')">Skirts</li>
         <li onclick="setAllFilter(this,'sets')">Sets</li>
       </ul>
-      <select class="sort-select" id="allSortSelect" onchange="sortAllProducts(this.value)">
-        <option value="featured">Featured</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="newest">Newest</option>
-      </select>
+      <div class="sort-wrapper">
+        <select class="sort-select" id="allSortSelect" onchange="sortAllProducts(this.value)">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
     </div>
     <div class="all-products-count" id="allProductsCount"></div>
     <div class="product-grid" id="allProductGrid"></div>
@@ -1173,8 +1223,13 @@ function openAllProducts(cat){
   const tab = [...document.querySelectorAll('#allFilterTabs li')].find(l=>l.textContent.toLowerCase()===allCurrentFilter||(allCurrentFilter==='all'&&l.textContent==='All'));
   if(tab) tab.classList.add('active');
   renderAllProducts();
-  document.getElementById('allProductsScreen').classList.add('open');
+  const screen = document.getElementById('allProductsScreen');
+  screen.classList.add('open');
   document.body.style.overflow='hidden';
+  const body = screen.querySelector('.all-products-body');
+  body.scrollTop = 0;
+  const filterBar = body.querySelector('.filter-bar');
+  body.onscroll = ()=> filterBar.classList.toggle('scrolled', body.scrollTop > 10);
 }
 
 function closeAllProducts(){
