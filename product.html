@@ -8,9 +8,9 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cream:#fff9fb;--warm:#fef0f3;--blush:#ffd6de;
-  --dark:#1a1218;--mid:#5a4750;--muted:#9c8790;--border:#f0dde2;
-  --accent:#ff8da1;--accent-dark:#e8607a;--accent-light:#ffe4ea;
+  --cream:#fff5f7;--warm:#fdeef2;--blush:#f9c8d0;
+  --dark:#1a1218;--mid:#5a3040;--muted:#9c7885;--border:#f5d5db;
+  --accent:#dc768c;--accent-dark:#c0284a;--accent-light:#fde8ec;
   --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;
 }
 html{scroll-behavior:smooth}
@@ -81,7 +81,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px 
 
 /* CTA */
 .cta-stack{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.btn-atc{width:100%;padding:16px;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:var(--sans);font-weight:500;transition:background .25s;box-shadow:0 4px 20px rgba(255,141,161,.35)}
+.btn-atc{width:100%;padding:16px;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:var(--sans);font-weight:500;transition:background .25s;box-shadow:0 4px 20px rgba(220,118,140,.35)}
 .btn-atc:hover{background:var(--accent-dark)}
 .btn-buy{width:100%;padding:15px;background:transparent;color:var(--dark);border:1.5px solid var(--dark);cursor:pointer;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:var(--sans);font-weight:400;transition:all .25s}
 .btn-buy:hover{background:var(--dark);color:#fff}
@@ -156,11 +156,11 @@ nav{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px 
 .cart-cta-stack{display:flex;flex-direction:column;gap:8px}
 .btn-continue{display:block;width:100%;padding:13px;text-align:center;background:transparent;color:var(--dark);border:1.5px solid var(--dark);font-size:9px;letter-spacing:3px;text-transform:uppercase;font-family:var(--sans);cursor:pointer;transition:all .25s}
 .btn-continue:hover{background:var(--dark);color:#fff}
-.btn-checkout{display:block;width:100%;padding:15px;text-align:center;background:var(--accent);color:#fff;border:none;text-decoration:none;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:var(--sans);font-weight:500;transition:background .2s;box-shadow:0 4px 20px rgba(255,141,161,.4)}
+.btn-checkout{display:block;width:100%;padding:15px;text-align:center;background:var(--accent);color:#fff;border:none;text-decoration:none;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:var(--sans);font-weight:500;transition:background .2s;box-shadow:0 4px 20px rgba(220,118,140,.4)}
 .btn-checkout:hover{background:var(--accent-dark)}
 
 /* TOAST */
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--accent);color:#fff;padding:12px 28px;border-radius:30px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-family:var(--sans);font-weight:500;opacity:0;pointer-events:none;transition:all .3s;z-index:300;box-shadow:0 8px 30px rgba(255,141,161,.5);white-space:nowrap}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--accent);color:#fff;padding:12px 28px;border-radius:30px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-family:var(--sans);font-weight:500;opacity:0;pointer-events:none;transition:all .3s;z-index:300;box-shadow:0 8px 30px rgba(220,118,140,.5);white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 @media(max-width:960px){

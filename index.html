@@ -8,17 +8,17 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cream:#fff9fb;
-  --warm:#fef0f3;
-  --blush:#ffd6de;
-  --rose:#ff8da1;
+  --cream:#fff5f7;
+  --warm:#fdeef2;
+  --blush:#f9c8d0;
+  --rose:#dc768c;
   --dark:#1a1218;
-  --mid:#5a4750;
-  --muted:#9c8790;
-  --border:#f0dde2;
-  --accent:#ff8da1;
-  --accent-dark:#e8607a;
-  --accent-light:#ffe4ea;
+  --mid:#5a3040;
+  --muted:#9c7885;
+  --border:#f5d5db;
+  --accent:#dc768c;
+  --accent-dark:#c0284a;
+  --accent-light:#fde8ec;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',sans-serif;
 }
@@ -87,13 +87,13 @@ nav{
 .hero-bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse at 70% 40%, rgba(255,141,161,0.18) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(255,141,161,0.12) 0%, transparent 50%),
-    linear-gradient(160deg, #fff9fb 0%, #fef0f3 100%);
+    radial-gradient(ellipse at 70% 40%, rgba(220,118,140,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(220,118,140,0.12) 0%, transparent 50%),
+    linear-gradient(160deg, #fff5f7 0%, #fdeef2 100%);
 }
 .hero-img-placeholder{
   position:absolute;right:0;top:0;bottom:0;width:62%;
-  background:linear-gradient(135deg,#ffd6de 0%,#ffb3c1 60%,#ff8da1 100%);
+  background:linear-gradient(135deg,#f9c8d0 0%,#e89aaa 60%,#dc768c 100%);
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;
 }
@@ -135,9 +135,9 @@ nav{
   font-size:10px;letter-spacing:3px;text-transform:uppercase;
   font-family:var(--sans);font-weight:500;
   transition:background .25s,gap .25s,box-shadow .25s;cursor:pointer;border:none;
-  box-shadow:0 4px 20px rgba(255,141,161,0.35);
+  box-shadow:0 4px 20px rgba(220,118,140,0.35);
 }
-.btn-primary:hover{background:var(--accent-dark);gap:18px;box-shadow:0 6px 28px rgba(255,141,161,0.5)}
+.btn-primary:hover{background:var(--accent-dark);gap:18px;box-shadow:0 6px 28px rgba(220,118,140,0.5)}
 .btn-outline{
   display:inline-flex;align-items:center;gap:12px;
   border:1.5px solid var(--accent);color:var(--accent);
@@ -146,7 +146,7 @@ nav{
   font-family:var(--sans);font-weight:400;
   transition:all .25s;cursor:pointer;background:transparent;
 }
-.btn-outline:hover{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(255,141,161,0.3)}
+.btn-outline:hover{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(220,118,140,0.3)}
 .hero-scroll{
   position:absolute;bottom:30px;right:40px;
   font-size:9px;letter-spacing:3px;text-transform:uppercase;
@@ -268,7 +268,7 @@ nav{
   font-size:8px;letter-spacing:2px;text-transform:uppercase;
   padding:5px 10px;font-family:var(--sans);border-radius:2px;
 }
-.product-badge.new{background:var(--accent);box-shadow:0 2px 12px rgba(255,141,161,0.4)}
+.product-badge.new{background:var(--accent);box-shadow:0 2px 12px rgba(220,118,140,0.4)}
 .product-badge.sold{background:var(--muted)}
 .product-actions{
   position:absolute;bottom:12px;left:12px;right:12px;
@@ -278,7 +278,7 @@ nav{
 .product-card:hover .product-actions{opacity:1;transform:translateY(0)}
 .btn-addcart{
   width:100%;padding:11px;
-  background:rgba(255,141,161,0.92);color:#fff;border:none;
+  background:rgba(220,118,140,0.92);color:#fff;border:none;
   font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
   font-family:var(--sans);cursor:pointer;font-weight:500;
   backdrop-filter:blur(4px);
@@ -446,7 +446,7 @@ nav{
 
 /* ── NEWSLETTER ── */
 .newsletter{
-  background:linear-gradient(135deg,#ff8da1 0%,#e8607a 100%);
+  background:linear-gradient(135deg,#dc768c 0%,#c0284a 100%);
   color:#fff;padding:80px 40px;text-align:center;
 }
 .nl-title{
@@ -582,7 +582,7 @@ footer{
   font-size:10px;letter-spacing:3px;text-transform:uppercase;
   font-family:var(--sans);font-weight:500;border:none;cursor:pointer;
   transition:background .2s;
-  box-shadow:0 4px 20px rgba(255,141,161,0.4);
+  box-shadow:0 4px 20px rgba(220,118,140,0.4);
 }
 .cart-checkout:hover{background:var(--accent-dark)}
 
@@ -595,7 +595,7 @@ footer{
   font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
   font-family:var(--sans);font-weight:500;opacity:0;pointer-events:none;
   transition:all .3s;z-index:300;
-  box-shadow:0 8px 30px rgba(255,141,161,0.5);
+  box-shadow:0 8px 30px rgba(220,118,140,0.5);
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
